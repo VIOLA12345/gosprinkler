@@ -32,13 +32,13 @@ func sprinklerOn(w http.ResponseWriter, r *http.Request) {
 
 	switch whichSprinkler[0] {
 	case "A":
-		pi.DigitalWrite("37", 0)
+		pi.DigitalWrite("31", 0)
 	case "B":
-		pi.DigitalWrite("33", 1)
+		pi.DigitalWrite("33", 0)
 	case "C":
-		pi.DigitalWrite("35", 1)
+		pi.DigitalWrite("35", 0)
 	case "D":
-		pi.DigitalWrite("37", 1)
+		pi.DigitalWrite("37", 0)
 	default:
 		fmt.Fprintf(w, "Invalid name for sprinkler  %v", whichSprinkler)
 		return
@@ -53,13 +53,13 @@ func sprinklerOff(w http.ResponseWriter, r *http.Request) {
 
 	switch whichSprinkler[0] {
 	case "A":
-		pi.DigitalWrite("37", 1)
+		pi.DigitalWrite("31", 1)
 	case "B":
-		pi.DigitalWrite("33", 0)
+		pi.DigitalWrite("33", 1)
 	case "C":
-		pi.DigitalWrite("35", 0)
+		pi.DigitalWrite("35", 1)
 	case "D":
-		pi.DigitalWrite("37", 0)
+		pi.DigitalWrite("37", 1)
 	default:
 		fmt.Fprintf(w, "Invalid name for sprinkler  %v", whichSprinkler)
 		return
