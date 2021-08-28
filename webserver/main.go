@@ -32,7 +32,13 @@ func sprinklerOn(w http.ResponseWriter, r *http.Request) {
 
 	switch whichSprinkler[0] {
 	case "A":
+		/*fmt.Println("Soil Moisture Level")
+		moisture_level :=analogRead(pin1)
+		fmt.Println("Soil Moisture Level is : ", moisture_level)
+		if moisture_level > 750 {
+			*/
 		pi.DigitalWrite("31", 0)
+		 //}
 	case "B":
 		pi.DigitalWrite("33", 0)
 	case "C":
